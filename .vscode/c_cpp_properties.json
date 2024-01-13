@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "${default}",
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "includePath": [
+                "/opt/ros/melodic/include/**",
+                "/usr/include/**",
+                "/home/action/vio_system/src/feature_tracker/include/feature_tracker",
+                "/home/action/vio_system/src/camera_model/include/camodocal",
+                "${workspaceFolder}/src/camera_model/include",
+                "/home/action/vio_system/src/vio_system_estimator/include/vio_system_estimator",
+                "/home/action/vio_system/src/vio_system_estimator/src/factor",
+                "${workspaceFolder}"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "c++14"
+        }
+    ],
+    "version": 4
+}

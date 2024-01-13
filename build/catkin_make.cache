@@ -1,0 +1,2 @@
+camera_model:feature_tracker:vio_system_estimator
+-DCATKIN_DEVEL_PREFIX=/home/action/vio_system/devel -DCMAKE_INSTALL_PREFIX=/home/action/vio_system/install -G Unix Makefiles

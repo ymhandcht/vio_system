@@ -1,0 +1,8 @@
+prefix=/home/action/vio_system/devel
+
+Name: vio_system_estimator
+Description: Description of vio_system_estimator
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

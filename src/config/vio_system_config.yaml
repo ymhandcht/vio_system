@@ -1,0 +1,64 @@
+%YAML:1.0
+#传感器数据话题
+imu_topic: "/imu/data"
+image_topic: "/camera/color/image_raw"
+#相机参数
+model_type: PINHOLE
+camera_name: camera
+image_width:  640
+image_height: 480
+distortion_parameters:
+   k1: -0.046174
+   k2: 0.037019
+   p1: -0.000071
+   p2: -0.000042
+projection_parameters:
+   fx: 384.246018
+   fy: 384.213998
+   cx: 312.578626
+   cy: 236.766408
+#外参估计参数 
+# 0：有准确的外参，vio运行时候不进行估计；
+#1：有大致的外参，vio运行时候初始化阶段不进行估计，优化阶段进行优化；
+# 2：没有外参，vio运行初始化阶段进行估计，优化阶段也参与优化
+estimate_extrinsic: 0              
+#如果外参估计参数为0或者1，需要定义下面参数，从相机到imu的外参Ric tic
+extrinsicRotation: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [0.99997752,0.0006322,0.00667491,
+           0.00061626,-0.99999695,0.00239072,
+           0.0066764,-0.00238656,-0.99997486]
+extrinsicTranslation: !!opencv-matrix
+   rows: 3
+   cols: 1
+   dt: d
+   data: [-0.00092387,-0.00255206,-0.05062755]
+
+#前端光流追踪的参数
+max_cnt: 150             # 每幅图像最多提取的特征点数目
+min_dist: 20               # 每两个特征点的最小像素距离
+freq: 10                         # 前端光流追踪结果往后端发布频率，最小为10hz，如果置为0则默认图像原始频率发布
+F_threshold: 1.0       # 基础矩阵去除外点ransac阈值
+show_track: 1            # 光流追踪图像结果作为话题发布
+
+#后端优化相关参数
+max_solver_time: 0.04     # 优化迭代最长时间
+max_num_iterations: 8    # 优化迭代最大次数
+keyframe_parallax: 10.0   # 关键帧选取最小视差
+#imu内参
+acc_n: 0.144184499787              # 加速度计噪声标准差
+gyr_n: 0.0340770968827            # 陀螺仪噪声标准差
+acc_w: 0.00312093129305        # 加速度计随机游走标准差
+gyr_w: 0.000485686526336      # 陀螺仪随机游走标准差
+g_norm: 9.846                                # 重力加速度模值
+
+#传感器时间延时参数---------------图像时间真值 + td = imu时间真值
+estimate_td: 0                                 # 0---有准确的时间延时参数，后端优化对这个参数不再优化   1---有初始估计参数，后端优化需要优化估计
+td: -0.017008309216613574
+
+#可视化参数
+save_image: 0                                 # 保存位姿图，设置为0则不保存
+visualize_imu_forward: 0          # 利用imu的高频特性输出低延时的位姿
+visualize_camera_size: 0.3       # RVIZ中相机的size大小

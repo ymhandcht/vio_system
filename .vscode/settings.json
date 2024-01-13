@@ -1,0 +1,29 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/action/BigCar_outdoor_ws/devel/lib/python2.7/dist-packages",
+        "/opt/ros/melodic/lib/python2.7/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/action/BigCar_outdoor_ws/devel/lib/python2.7/dist-packages",
+        "/opt/ros/melodic/lib/python2.7/dist-packages"
+    ],
+    "files.associations": {
+        "cholesky": "cpp",
+        "core": "cpp",
+        "eigenvalues": "cpp",
+        "geometry": "cpp",
+        "householder": "cpp",
+        "jacobi": "cpp",
+        "lu": "cpp",
+        "qr": "cpp",
+        "svd": "cpp",
+        "stdvector": "cpp",
+        "nonlinearoptimization": "cpp",
+        "numericaldiff": "cpp",
+        "polynomials": "cpp",
+        "eigen2support": "cpp",
+        "*.tcc": "cpp",
+        "random": "cpp",
+        "dense": "cpp"
+    }
+}
